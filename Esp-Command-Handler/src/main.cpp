@@ -2,14 +2,20 @@
 #include "CommandHandler.h"
 
 // This is for testing lol
-int lol(){
+int lol(String test){
   printf("lol\n");
   return 0;
 }
 
 // This is also for testing lmao
-int lmao(){
+int lmao(String test){
   printf("lmao\n");
+  return 0;
+}
+
+// Third tester and Stuff
+int stuff(String test){
+  printf("Stuff\n");
   return 0;
 }
 
@@ -19,10 +25,11 @@ void setup() {
 
   AddCommand("lolCom", lol);
   AddCommand("lmaoCom", lmao);
+  AddCommand("Stuff", stuff);
   delay(200);
 }
 
 void loop() {
-  RunCommand("lol");
+  RunCommand("Stuff", "");
   WaitForCommand();
 }

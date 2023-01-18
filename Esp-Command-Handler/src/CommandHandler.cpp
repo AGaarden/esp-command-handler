@@ -10,13 +10,13 @@ std::map<String, pfunc> _funckvp{};
 
 // This will find the command to use
 // Does this just give a pointer or address or? Must research more
-int RunCommand(String comm) {
+int RunCommand(String comm, String args) {
     if(_funckvp.find(comm) == _funckvp.end()) {
         return -1;
     }
     else {
         pfunc func = _funckvp[comm];
-        return (*func)();
+        return (*func)(args);
     }
 }
 
@@ -60,7 +60,7 @@ void WaitForCommand() {
         // OBS: Update library to include a command parameter
     }
     else {
-        int errCode = RunCommand(input);
+        int errCode = RunCommand(input, "");
         if(errCode == -1) {
             printf("Command not found\n");
         }

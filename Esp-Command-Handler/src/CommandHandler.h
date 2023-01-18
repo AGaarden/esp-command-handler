@@ -11,10 +11,10 @@
 #define Commandhandler_h
 
 /* Does this work? idk */
-using pfunc = int (*)();
+using pfunc = int (*)(String);
 
 /* Functions */
-int RunCommand(String comm);
+int RunCommand(String comm, String args);
 int AddCommand(String comm, pfunc func);
 void WaitForCommand();
 
