@@ -56,8 +56,16 @@ void WaitForCommand() {
     }
 
     if(input.indexOf(',') != -1) {
-        // Make a command and a command parameter and run the command
-        // OBS: Update library to include a command parameter
+        int errCode = RunCommand(
+            input.substring(0, input.indexOf(',')), 
+            input.substring(input.indexOf(',' + 1))
+            );
+        if(errCode == -1) {
+            printf("Command not found\n");
+        }
+        else {
+            printf("Pog it works\n");
+        }
     }
     else {
         int errCode = RunCommand(input, "");
