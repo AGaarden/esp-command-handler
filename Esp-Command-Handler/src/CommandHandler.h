@@ -10,7 +10,7 @@
 #ifndef CommandHandler_h
 #define Commandhandler_h
 
-/* Does this work? idk */
+/* Function taking a String as an argument, returning integer */
 using pfunc = int (*)(String);
 
 /* Functions */
